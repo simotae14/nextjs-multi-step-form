@@ -62,7 +62,6 @@ function ExperienceInfo() {
 		} catch (error: unknown) {
 			if (error instanceof z.ZodError) {
 				const mappedErrors = zodErrorsManipulation(error);
-				console.log('mappedErrors', mappedErrors);
 				setErrors(mappedErrors as Record<string, string[]>);
 			}
 		}

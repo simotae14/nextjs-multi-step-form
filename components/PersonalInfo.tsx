@@ -1,6 +1,7 @@
 import * as React from 'react';
 import useJobAppStore from '@/store';
 import { personalInfoSchema } from '@/validationSchema';
+import { zodErrorsManipulation } from '@/utils/zodErrorsManipulation';
 import z from 'zod';
 
 function PersonalInfo() {
@@ -19,11 +20,10 @@ function PersonalInfo() {
 			nextStep();
 		} catch (error: unknown) {
 			if (error instanceof z.ZodError) {
-				const flattenedErrors = error.flatten();
-				const fieldErrors = flattenedErrors.fieldErrors;
-				setErrors({
-					...fieldErrors,
-				});
+				if (error instanceof z.ZodError) {
+					const mappedErrors = zodErrorsManipulation(error);
+					setErrors(mappedErrors as Record<string, string[]>);
+				}
 			}
 		}
 	};
