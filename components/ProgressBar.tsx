@@ -10,7 +10,7 @@ const Circle = ({ step, currentIndex }: { step: number; currentIndex: number }) 
 							step < currentIndex
 								? 'bg-white border-gray-300 text-gray-500'
 								: 'bg-blue-500 border-blue-500 text-white'
-					  }`
+						}`
 			}`}
 		>
 			{currentIndex}
