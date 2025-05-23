@@ -67,8 +67,6 @@ function EducationBackground() {
 		}
 	};
 
-	console.log('errors', errors);
-
 	return (
 		<div>
 			<h2 className="text-xl font-semibold">Education Background</h2>

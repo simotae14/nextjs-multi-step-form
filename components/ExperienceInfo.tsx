@@ -69,7 +69,7 @@ function ExperienceInfo() {
 
 	return (
 		<div>
-			<h2 className="text-xl font-semibold">Experience Information</h2>
+			<h2 className="text-xl font-semibold">Education Background</h2>
 			<div className="mt-5">
 				{errors.genericError && (
 					<div className="font-bold text-red-600">*{errors.genericError}</div>
